@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizard's Outreach Admin Dashboard</title>
+    <link rel="stylesheet" href="css/admin-styles.css">
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>🧙 Wizard's Outreach Admin Dashboard</h1>
+            <div class="header-controls">
+                <span id="last-update">Last updated: Never</span>
+                <button id="manual-refresh" class="btn-refresh">↻ Refresh Now</button>
+                <div class="auto-refresh-toggle">
+                    <label>
+                        <input type="checkbox" id="auto-refresh-toggle" checked>
+                        Auto-refresh (<span id="countdown">30</span>s)
+                    </label>
+                </div>
+            </div>
+        </header>
+
+        <main class="admin-main">
+            <section class="dashboard-section">
+                <h2>Repository Status</h2>
+                <div id="repo-status" class="status-grid">
+                    <div class="status-card">
+                        <h3>Lyric Live Free Basic Pro</h3>
+                        <div class="status-indicator loading">Loading...</div>
+                        <div class="card-content" id="lyric-status"></div>
+                    </div>
+                    <div class="status-card">
+                        <h3>Subscription Starter</h3>
+                        <div class="status-indicator loading">Loading...</div>
+                        <div class="card-content" id="subscription-status"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2>Recent Activity</h2>
+                <div id="activity-feed" class="activity-feed">
+                    <p class="loading">Loading activity...</p>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2>Quick Actions</h2>
+                <div class="action-grid">
+                    <button class="action-btn" onclick="adminActions.viewLyricRepo()">
+                        📱 View Lyric Live Repo
+                    </button>
+                    <button class="action-btn" onclick="adminActions.viewSubscriptionRepo()">
+                        💳 View Subscription Repo
+                    </button>
+                    <button class="action-btn" onclick="adminActions.checkIssues()">
+                        🔍 Check All Issues
+                    </button>
+                    <button class="action-btn" onclick="adminActions.checkPullRequests()">
+                        🔀 Check Pull Requests
+                    </button>
+                </div>
+            </section>
+
+            <section class="dashboard-section">
+                <h2>System Health</h2>
+                <div id="system-health" class="health-grid">
+                    <div class="health-card">
+                        <h4>API Status</h4>
+                        <div class="health-indicator" id="api-health">Checking...</div>
+                    </div>
+                    <div class="health-card">
+                        <h4>Firebase Connection</h4>
+                        <div class="health-indicator" id="firebase-health">Checking...</div>
+                    </div>
+                    <div class="health-card">
+                        <h4>GitHub API</h4>
+                        <div class="health-indicator" id="github-health">Checking...</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="admin-footer">
+            <p>Wizard's Outreach Australia - Admin Dashboard v1.0</p>
+            <p>Auto-updating every 30 seconds</p>
+        </footer>
+    </div>
+
+    <script type="module" src="js/admin-updater.js"></script>
+    <script src="js/admin-actions.js"></script>
+</body>
+</html>
