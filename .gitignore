@@ -1,0 +1,34 @@
+# Environment variables
+.env
+
+# Sensitive configuration files
+admin/config/.env
+admin/config/firebase-config.local.js
+
+# Node modules (if Node.js is used)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+dist/
+build/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
